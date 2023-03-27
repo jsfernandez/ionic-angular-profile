@@ -25,7 +25,6 @@ export class ContactFormComponent implements OnInit {
 
   constructor() {
     this.user.valueChanges.subscribe(data => {
-      console.log('Form changes', data)
       this.validateForm();
     })
   }
@@ -69,6 +68,7 @@ export class ContactFormComponent implements OnInit {
 
     reader.onload = (e: any) => {
       this.selectedImage = e.target.result;
+      this.validateForm();
     };
 
     reader.readAsDataURL(file);
