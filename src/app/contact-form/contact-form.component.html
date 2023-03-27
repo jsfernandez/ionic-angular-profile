@@ -11,8 +11,8 @@
     </ion-item>
     
     <ion-item>
-      <ion-label position="stacked">Date of Birth</ion-label>
-      <ion-input type="date" formControlName="dob"></ion-input>
+      <ion-label position="stacked">Date of Birth (between 1900 and today)</ion-label>
+      <ion-input type="date" formControlName="dob" displayFormat="DD/MM/YYYY" max="{{ maxDate }}" min="{{ minDate }}"></ion-input>
     </ion-item>
     
     <ion-item>
