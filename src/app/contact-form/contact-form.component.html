@@ -1,0 +1,52 @@
+<div>
+  <form [formGroup]="user">
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input type="text" formControlName="firstName" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" formControlName="lastName" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Date of Birth</ion-label>
+      <ion-input type="date" formControlName="dob" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Street</ion-label>
+      <ion-input type="text" formControlName="street" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">City</ion-label>
+      <ion-input type="text" formControlName="city" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">State</ion-label>
+      <ion-input type="text" formControlName="state" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Job Title</ion-label>
+      <ion-input type="text" formControlName="jobTitle" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input type="tel" formControlName="phoneNumber" (change)="validateForm()"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Profile Photo</ion-label>
+      <input type="file" accept="image/*" formControlName="pictureUrl" (change)="setImage($event)">
+      <img *ngIf="selectedImage" [src]="selectedImage" class="avatar">
+    </ion-item>
+    <br>
+    <ion-button expand="block" type="submit" (click)="submitForm()" [disabled]="!validForm">Submit</ion-button>
+    
+  </form>  
+</div>

@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><ion-icon name="id-card-outline"></ion-icon> User's Profile </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <div *ngIf="!user || !user.firstName">
+        <h2>No content yet <ion-icon name="alert-circle-outline"></ion-icon></h2>
+      </div>
+      <div *ngIf="user && user.firstName">
+        <ion-avatar class="avatar-content">
+          <img *ngIf="user.pictureUrl" [src]="user.pictureUrl" class="avatar">
+        </ion-avatar>
+        <p>First Name: {{user.firstName}}</p>
+        <p>Last Name: {{user.lastName}}</p>
+        <p>Date Of Birth: {{user.dob}}</p>
+        <p>Street: {{user.street}}</p>
+        <p>City: {{user.city}}</p>
+        <p>State: {{user.state}}</p>
+        <p>Job Title: {{user.jobTitle}}</p>
+        <p>Phone Number: {{user.phoneNumber}}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
