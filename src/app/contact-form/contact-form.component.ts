@@ -81,7 +81,7 @@ export class ContactFormComponent implements OnInit {
 
     if (this.selectedImage) {
       const user = User.getUserState()
-      user.setUser(firstName, lastName, dob, street, city, state, jobTitle, phoneNumber, this.selectedImage);
+      user.setUser(firstName, lastName, (dob).toLocaleDateString('en-GB'), street, city, state, jobTitle, phoneNumber, this.selectedImage);
       console.log(User.getUserState())
       this.operationSuccess();
     }

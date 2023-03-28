@@ -2,7 +2,7 @@ export class User {
     private static _instance: User;
     public firstName: string | undefined;
     public lastName: string | undefined;
-    public dob: Date | undefined;
+    public dob: string | undefined;
     public street: string | undefined;
     public city: string | undefined;
     public state: string | undefined;
@@ -29,7 +29,7 @@ export class User {
     setUser(
         firstName: string,
         lastName: string,
-        dob: Date,
+        dob: string,
         street: string,
         city: string,
         state: string,
